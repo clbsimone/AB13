@@ -66,12 +66,11 @@ def main():
     address = ('0.0.0.0', 5000)
     s.bind(address)
     s.listen()
-
-    connesione, clientAddress = s.accept()
-
-    thread = ThreadLed(connesione)
-    thread.start()
+    
     while True:
+        connesione, clientAddress = s.accept()
+        thread = ThreadLed(connesione)
+        thread.start()
         mex = connesione.recv(4096).decode() # mex decodificato in ascii
 
         # mex command example: f;10
