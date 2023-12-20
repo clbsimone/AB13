@@ -1,5 +1,5 @@
 import socket as sck
-#import AlphaBot
+import AlphaBot
 import time
 import sqlite3
 from flask import Flask, render_template, redirect, url_for, request
@@ -9,7 +9,7 @@ app = Flask(__name__, static_url_path='/static')
 SEPARATOR = ';'
 SEPARATOR_DB = '-'
 
-#r = AlphaBot.AlphaBot()
+r = AlphaBot.AlphaBot()
 
 #conDb = sqlite3.connect("./TabMovements.db")
 #curDb = conDb.cursor()
