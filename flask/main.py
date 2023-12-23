@@ -39,7 +39,7 @@ def check_password(hashed_password, user_password):
 
 def validate(username, password):
     completion = False
-    with sqlite3.connect('/Users/simonebasso/Desktop/2023:2024/flask/ab13/flask/db.db') as con:
+    with sqlite3.connect('./db.db') as con:
         cur = con.cursor()
         cur.execute("SELECT * FROM Users")
         rows = cur.fetchall()
@@ -97,7 +97,7 @@ def cDb(command):
             playMov(mov.split(SEPARATOR)[0], float(mov.split(SEPARATOR)[1]))
 
 def main():
-    app.run(debug=True, host='127.0.0.1', port=8000)
+    app.run(debug=True, host='0.0.0.0', port=8000)
 
 
 if __name__ == '__main__':
